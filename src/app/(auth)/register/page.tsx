@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, type FormEvent } from "react";
-import { signIn } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import Button from "@/components/ui/Button";
@@ -21,7 +20,6 @@ export default function RegisterPage() {
     setLoading(true);
 
     try {
-      // Register
       const res = await fetch("/api/register", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -35,18 +33,8 @@ export default function RegisterPage() {
         return;
       }
 
-      // Auto-login after registration
-      const result = await signIn("credentials", {
-        email,
-        password,
-        redirect: false,
-      });
-
-      if (result?.error) {
-        setError("Account created but login failed. Please sign in manually.");
-      } else {
-        router.push("/notes");
-      }
+      // Redirect to verify-email page
+      router.push(`/verify-email?email=${encodeURIComponent(email)}`);
     } catch {
       setError("Something went wrong. Please try again.");
     } finally {

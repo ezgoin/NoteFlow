@@ -8,13 +8,14 @@ datasource db {
 }
 
 model User {
-  id             String   @id @default(cuid())
-  email          String   @unique
+  id             String    @id @default(cuid())
+  email          String    @unique
   name           String?
   hashedPassword String?
   image          String?
-  createdAt      DateTime @default(now())
-  updatedAt      DateTime @updatedAt
+  emailVerified  DateTime?
+  createdAt      DateTime  @default(now())
+  updatedAt      DateTime  @updatedAt
 
   notes    Note[]
   folders  Folder[]
@@ -22,6 +23,17 @@ model User {
   tasks    Task[]
   accounts Account[]
   sessions Session[]
+}
+
+model VerificationToken {
+  id        String   @id @default(cuid())
+  token     String   @unique
+  email     String
+  expires   DateTime
+  createdAt DateTime @default(now())
+
+  @@index([email])
+  @@index([token])
 }
 
 model Account {
