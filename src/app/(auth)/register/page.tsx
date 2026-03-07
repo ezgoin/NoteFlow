@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import Link from "next/link";
 import Button from "@/components/ui/Button";
 import Input from "@/components/ui/Input";
+import GoogleSignInButton from "@/components/ui/GoogleSignInButton";
 
 export default function RegisterPage() {
   const router = useRouter();
@@ -53,6 +54,17 @@ export default function RegisterPage() {
 
         {/* Card */}
         <div className="rounded-xl border border-gray-200 bg-white p-6 shadow-sm">
+          <GoogleSignInButton label="Sign up with Google" />
+
+          <div className="relative my-5">
+            <div className="absolute inset-0 flex items-center">
+              <div className="w-full border-t border-gray-200" />
+            </div>
+            <div className="relative flex justify-center text-xs uppercase">
+              <span className="bg-white px-2 text-gray-400">or</span>
+            </div>
+          </div>
+
           <form onSubmit={handleSubmit} className="space-y-4">
             <Input
               label="Name"
