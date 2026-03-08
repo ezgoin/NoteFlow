@@ -96,7 +96,7 @@ export default function RegisterPage() {
             />
 
             {error && (
-              <p className="text-sm text-red-600 text-center">{error}</p>
+              <p className="text-sm text-danger text-center">{error}</p>
             )}
 
             <Button

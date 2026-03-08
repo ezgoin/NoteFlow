@@ -170,7 +170,7 @@ export default function TagPicker({
                     className={[
                       "size-6 rounded-full transition-transform hover:scale-110 cursor-pointer",
                       newColor === c
-                        ? "ring-2 ring-offset-1 ring-gray-400 scale-110"
+                        ? "ring-2 ring-offset-1 ring-text-muted scale-110"
                         : "",
                     ].join(" ")}
                     style={{ backgroundColor: c }}

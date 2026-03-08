@@ -220,7 +220,7 @@ function FolderNode({
           />
           <button
             onClick={handleCreateChild}
-            className="rounded p-1 text-green-600 hover:bg-green-50 dark:hover:bg-green-900/20 cursor-pointer"
+            className="rounded p-1 text-success hover:bg-success-light cursor-pointer"
           >
             <Check size={14} />
           </button>
@@ -338,7 +338,7 @@ export default function FolderTree({
           />
           <button
             onClick={handleCreateRoot}
-            className="rounded p-1 text-green-600 hover:bg-green-50 dark:hover:bg-green-900/20 cursor-pointer"
+            className="rounded p-1 text-success hover:bg-success-light cursor-pointer"
           >
             <Check size={14} />
           </button>

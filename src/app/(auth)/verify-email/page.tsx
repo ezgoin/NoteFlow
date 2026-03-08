@@ -71,14 +71,14 @@ function VerifyEmailContent() {
       </p>
 
       {resent && (
-        <div className="mb-4 flex items-center justify-center gap-2 rounded-lg bg-green-50 px-3 py-2 text-sm text-green-700">
+        <div className="mb-4 flex items-center justify-center gap-2 rounded-lg bg-success-light px-3 py-2 text-sm text-success">
           <CheckCircle2 className="h-4 w-4" />
           Verification email resent!
         </div>
       )}
 
       {error && (
-        <p className="mb-4 text-sm text-red-600">{error}</p>
+        <p className="mb-4 text-sm text-danger">{error}</p>
       )}
 
       <Button

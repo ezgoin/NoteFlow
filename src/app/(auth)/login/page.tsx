@@ -54,7 +54,7 @@ function LoginForm() {
     <>
       {/* Verified success banner */}
       {verified && (
-        <div className="mb-4 flex items-center justify-center gap-2 rounded-lg bg-green-50 border border-green-200 px-4 py-3 text-sm text-green-700">
+        <div className="mb-4 flex items-center justify-center gap-2 rounded-lg bg-success-light border border-success/30 px-4 py-3 text-sm text-success">
           <CheckCircle2 className="h-4 w-4 shrink-0" />
           Email verified successfully! You can now sign in.
         </div>
@@ -62,7 +62,7 @@ function LoginForm() {
 
       {/* Token error banner */}
       {tokenError && TOKEN_ERRORS[tokenError] && (
-        <div className="mb-4 rounded-lg bg-red-50 border border-red-200 px-4 py-3 text-sm text-red-700 text-center">
+        <div className="mb-4 rounded-lg bg-danger-light border border-danger/30 px-4 py-3 text-sm text-danger text-center">
           {TOKEN_ERRORS[tokenError]}
         </div>
       )}
@@ -102,7 +102,7 @@ function LoginForm() {
           />
 
           {error && (
-            <p className="text-sm text-red-600 text-center">{error}</p>
+            <p className="text-sm text-danger text-center">{error}</p>
           )}
 
           <Button
