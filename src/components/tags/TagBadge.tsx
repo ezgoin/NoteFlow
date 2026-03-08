@@ -53,7 +53,7 @@ export default function TagBadge({ name, color, onRemove }: TagBadgeProps) {
       {onRemove && (
         <button
           onClick={onRemove}
-          className="ml-0.5 rounded-full p-0.5 transition-colors hover:bg-black/10 cursor-pointer"
+          className="ml-0.5 rounded-full p-0.5 transition-colors hover:bg-surface-hover cursor-pointer"
           aria-label={`Remove tag ${name}`}
         >
           <X size={12} />

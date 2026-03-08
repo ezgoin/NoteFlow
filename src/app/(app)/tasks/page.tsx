@@ -17,8 +17,8 @@ const STATUS_LABELS: Record<StatusGroup, string> = {
 
 const STATUS_COLORS: Record<StatusGroup, string> = {
   todo: "bg-surface-hover text-text-secondary",
-  in_progress: "bg-blue-500/10 text-blue-500",
-  done: "bg-green-500/10 text-green-500",
+  in_progress: "bg-status-blue/10 text-status-blue",
+  done: "bg-status-green/10 text-status-green",
 };
 
 export default function TasksPage() {

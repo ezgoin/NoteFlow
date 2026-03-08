@@ -61,6 +61,12 @@
   --blockquote-border: #4f46e5;
   --hr-color: #e5e7eb;
 
+  /* Status indicators */
+  --status-blue: #3b82f6;
+  --status-green: #22c55e;
+  --status-orange: #f97316;
+  --status-red: #ef4444;
+
   /* Overlay */
   --overlay-bg: rgba(0, 0, 0, 0.4);
 }
@@ -108,6 +114,10 @@
   --highlight-bg: #854d0e;
   --blockquote-border: #818cf8;
   --hr-color: #333840;
+  --status-blue: #60a5fa;
+  --status-green: #4ade80;
+  --status-orange: #fb923c;
+  --status-red: #f87171;
   --overlay-bg: rgba(0, 0, 0, 0.6);
 }
 
@@ -154,6 +164,10 @@
   --highlight-bg: #854d0e;
   --blockquote-border: #e0a7f0;
   --hr-color: #333840;
+  --status-blue: #60a5fa;
+  --status-green: #4ade80;
+  --status-orange: #fb923c;
+  --status-red: #f87171;
   --overlay-bg: rgba(0, 0, 0, 0.6);
 }
 
@@ -200,6 +214,10 @@
   --highlight-bg: #854d0e;
   --blockquote-border: #38bdf8;
   --hr-color: #1e3a5f;
+  --status-blue: #7dd3fc;
+  --status-green: #86efac;
+  --status-orange: #fdba74;
+  --status-red: #fca5a5;
   --overlay-bg: rgba(0, 0, 0, 0.7);
 }
 
@@ -241,6 +259,10 @@
   --color-editor-border: var(--editor-border);
   --color-editor-toolbar-bg: var(--editor-toolbar-bg);
   --color-overlay-bg: var(--overlay-bg);
+  --color-status-blue: var(--status-blue);
+  --color-status-green: var(--status-green);
+  --color-status-orange: var(--status-orange);
+  --color-status-red: var(--status-red);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }

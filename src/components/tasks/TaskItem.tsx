@@ -32,9 +32,9 @@ interface TaskItemProps {
 
 const priorityConfig: Record<Priority, { label: string; classes: string }> = {
   low: { label: "Low", classes: "bg-surface-hover text-text-tertiary" },
-  medium: { label: "Medium", classes: "bg-blue-500/10 text-blue-500" },
-  high: { label: "High", classes: "bg-orange-500/10 text-orange-500" },
-  urgent: { label: "Urgent", classes: "bg-red-500/10 text-red-500" },
+  medium: { label: "Medium", classes: "bg-status-blue/10 text-status-blue" },
+  high: { label: "High", classes: "bg-status-orange/10 text-status-orange" },
+  urgent: { label: "Urgent", classes: "bg-status-red/10 text-status-red" },
 };
 
 /* ------------------------------------------------------------------ */
