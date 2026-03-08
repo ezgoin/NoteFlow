@@ -66,23 +66,23 @@
 }
 
 /* ========================================================================
-   THEME: Dark (Slack-inspired)
+   THEME: Dark
    ======================================================================== */
 [data-theme="dark"] {
   --background: #1e2228;
-  --foreground: #d1d5db;
+  --foreground: #f1f3f5;
   --surface: #262b33;
   --surface-secondary: #1a1d21;
   --surface-hover: #2f353d;
   --surface-active: #2d2f54;
-  --sidebar-bg: #1a1d21;
-  --sidebar-border: #333840;
-  --sidebar-hover: #2a2e34;
-  --text-primary: #e5e7eb;
-  --text-secondary: #b0b5bd;
-  --text-tertiary: #8b929b;
-  --text-muted: #636a75;
-  --text-placeholder: #636a75;
+  --sidebar-bg: #15171a;
+  --sidebar-border: #2a2e34;
+  --sidebar-hover: #22262b;
+  --text-primary: #f3f4f6;
+  --text-secondary: #d1d5db;
+  --text-tertiary: #9ca3af;
+  --text-muted: #6b7280;
+  --text-placeholder: #6b7280;
   --border: #333840;
   --border-strong: #444c56;
   --border-subtle: #262b33;
@@ -112,23 +112,23 @@
 }
 
 /* ========================================================================
-   THEME: Aubergine (Slack classic)
+   THEME: Aubergine
    ======================================================================== */
 [data-theme="aubergine"] {
-  --background: #1e2228;
-  --foreground: #d1d5db;
+  --background: #1a1d21;
+  --foreground: #f1f3f5;
   --surface: #262b33;
   --surface-secondary: #1a1d21;
   --surface-hover: #2f353d;
   --surface-active: #3d1f4e;
-  --sidebar-bg: #4a154b;
+  --sidebar-bg: #3e1042;
   --sidebar-border: #5c2d5e;
-  --sidebar-hover: #5c2d5e;
-  --text-primary: #e5e7eb;
-  --text-secondary: #b0b5bd;
-  --text-tertiary: #8b929b;
-  --text-muted: #636a75;
-  --text-placeholder: #636a75;
+  --sidebar-hover: #542258;
+  --text-primary: #f3f4f6;
+  --text-secondary: #d1d5db;
+  --text-tertiary: #9ca3af;
+  --text-muted: #6b7280;
+  --text-placeholder: #6b7280;
   --border: #333840;
   --border-strong: #444c56;
   --border-subtle: #262b33;
@@ -162,19 +162,19 @@
    ======================================================================== */
 [data-theme="ocean"] {
   --background: #0f172a;
-  --foreground: #cbd5e1;
+  --foreground: #f1f5f9;
   --surface: #1e293b;
   --surface-secondary: #0f172a;
   --surface-hover: #273449;
   --surface-active: #1e3a5f;
-  --sidebar-bg: #0c1524;
-  --sidebar-border: #1e3a5f;
-  --sidebar-hover: #1a2e4a;
-  --text-primary: #e2e8f0;
-  --text-secondary: #94a3b8;
-  --text-tertiary: #64748b;
-  --text-muted: #475569;
-  --text-placeholder: #475569;
+  --sidebar-bg: #070d18;
+  --sidebar-border: #162033;
+  --sidebar-hover: #0f1a2e;
+  --text-primary: #f1f5f9;
+  --text-secondary: #cbd5e1;
+  --text-tertiary: #94a3b8;
+  --text-muted: #64748b;
+  --text-placeholder: #64748b;
   --border: #1e3a5f;
   --border-strong: #2d4a6f;
   --border-subtle: #162033;
