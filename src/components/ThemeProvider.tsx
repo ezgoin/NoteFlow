@@ -27,6 +27,9 @@ export default function ThemeProvider({
   const setTheme = useStore((s) => s.setTheme);
   const { status } = useSession();
   const hasFetched = useRef(false);
+  // Track whether we're in the initial hydration phase so we don't
+  // persist the default store value ("light") back to the server.
+  const isHydrating = useRef(true);
 
   // On mount: apply cached theme from localStorage immediately
   useEffect(() => {
@@ -53,6 +56,10 @@ export default function ThemeProvider({
       })
       .catch(() => {
         // Silently fail — use cached or default theme
+      })
+      .finally(() => {
+        // Hydration is complete — future theme changes are user-initiated
+        isHydrating.current = false;
       });
   }, [status, setTheme]);
 
@@ -60,7 +67,19 @@ export default function ThemeProvider({
   useEffect(() => {
     applyTheme(theme);
     localStorage.setItem(STORAGE_KEY, theme);
-  }, [theme]);
+
+    // Persist to server when the user actively changes the theme
+    // (skip during initial hydration to avoid writing defaults back)
+    if (!isHydrating.current && status === "authenticated") {
+      fetch("/api/user/preferences", {
+        method: "PATCH",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ theme }),
+      }).catch(() => {
+        // Silently fail — localStorage still has the value
+      });
+    }
+  }, [theme, status]);
 
   return <>{children}</>;
 }
