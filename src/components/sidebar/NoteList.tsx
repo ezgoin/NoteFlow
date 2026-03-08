@@ -19,7 +19,7 @@ export default function NoteList({
 }: NoteListProps) {
   if (notes.length === 0) {
     return (
-      <div className="px-4 py-8 text-center text-sm text-text-muted">
+      <div className="px-4 py-8 text-center text-sm text-text-tertiary">
         No notes yet. Create one!
       </div>
     );
@@ -60,7 +60,7 @@ export default function NoteList({
             }}
           >
             <div className="flex items-center gap-1.5">
-              <FileText size={14} className="shrink-0 text-text-muted" />
+              <FileText size={14} className="shrink-0 text-text-tertiary" />
               <span
                 className={[
                   "flex-1 truncate text-sm font-medium",
@@ -78,7 +78,7 @@ export default function NoteList({
                     e.stopPropagation();
                     onTrashNote(note.id);
                   }}
-                  className="shrink-0 rounded-md p-0.5 text-text-placeholder opacity-0 transition-all hover:bg-danger-light hover:text-danger group-hover:opacity-100 cursor-pointer"
+                  className="shrink-0 rounded-md p-0.5 text-text-tertiary opacity-0 transition-all hover:bg-danger-light hover:text-danger group-hover:opacity-100 cursor-pointer"
                   title="Move to trash"
                   aria-label="Move to trash"
                 >
@@ -87,9 +87,9 @@ export default function NoteList({
               )}
             </div>
             {preview && (
-              <p className="truncate text-xs text-text-muted pl-5">{preview}</p>
+              <p className="truncate text-xs text-text-tertiary pl-5">{preview}</p>
             )}
-            <p className="text-[11px] text-text-placeholder pl-5">
+            <p className="text-[11px] text-text-muted pl-5">
               {formatDate(note.updatedAt, {
                 month: "short",
                 day: "numeric",

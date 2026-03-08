@@ -215,13 +215,13 @@ export default function TasksPage() {
                   >
                     {STATUS_LABELS[status]}
                   </span>
-                  <span className="text-xs text-text-muted">
+                  <span className="text-xs text-text-tertiary">
                     {groupTasks.length}
                   </span>
                 </div>
 
                 {groupTasks.length === 0 ? (
-                  <p className="py-4 text-center text-sm text-text-placeholder">
+                  <p className="py-4 text-center text-sm text-text-muted">
                     No tasks
                   </p>
                 ) : (

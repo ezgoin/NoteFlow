@@ -51,7 +51,7 @@ export default function TrashPage() {
       {/* Header */}
       <div className="flex items-center justify-between border-b border-border px-6 py-4">
         <div className="flex items-center gap-2">
-          <Trash2 size={20} className="text-text-muted" />
+          <Trash2 size={20} className="text-text-secondary" />
           <h1 className="text-xl font-semibold text-text-primary">Trash</h1>
           {trashedNotes.length > 0 && (
             <span className="rounded-full bg-surface-hover px-2 py-0.5 text-xs text-text-tertiary">
@@ -75,9 +75,9 @@ export default function TrashPage() {
         <div className="mx-auto max-w-3xl">
           {trashedNotes.length === 0 ? (
             <div className="flex flex-col items-center justify-center py-20 text-text-muted">
-              <Trash2 size={48} className="mb-4 text-text-placeholder" />
-              <p className="text-lg font-medium text-text-placeholder">Trash is empty</p>
-              <p className="mt-1 text-sm">Deleted notes will appear here</p>
+              <Trash2 size={48} className="mb-4 text-text-muted" />
+              <p className="text-lg font-medium text-text-muted">Trash is empty</p>
+              <p className="mt-1 text-sm text-text-tertiary">Deleted notes will appear here</p>
             </div>
           ) : (
             <div className="space-y-2">
@@ -122,9 +122,9 @@ function TrashItem({
           {note.title || "Untitled"}
         </h3>
         {preview && (
-          <p className="mt-0.5 truncate text-xs text-text-muted">{preview}</p>
+          <p className="mt-0.5 truncate text-xs text-text-tertiary">{preview}</p>
         )}
-        <p className="mt-1 text-[11px] text-text-placeholder">
+        <p className="mt-1 text-[11px] text-text-muted">
           Deleted{" "}
           {formatDate(note.trashedAt ?? note.updatedAt, {
             month: "short",

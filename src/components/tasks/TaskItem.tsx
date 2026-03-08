@@ -172,14 +172,14 @@ export default function TaskItem({
       <div className="flex shrink-0 items-center gap-0.5 opacity-0 transition-opacity group-hover:opacity-100">
         <button
           onClick={() => onEdit(task.id)}
-          className="rounded-md p-1.5 text-text-muted hover:bg-surface-hover hover:text-text-secondary transition-colors cursor-pointer"
+          className="rounded-md p-1.5 text-text-tertiary hover:bg-surface-hover hover:text-text-primary transition-colors cursor-pointer"
           aria-label="Edit task"
         >
           <Pencil size={14} />
         </button>
         <button
           onClick={() => onDelete(task.id)}
-          className="rounded-md p-1.5 text-text-muted hover:bg-danger-light hover:text-danger transition-colors cursor-pointer"
+          className="rounded-md p-1.5 text-text-tertiary hover:bg-danger-light hover:text-danger transition-colors cursor-pointer"
           aria-label="Delete task"
         >
           <Trash2 size={14} />

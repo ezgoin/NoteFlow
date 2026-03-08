@@ -115,7 +115,7 @@ export default function TagPicker({
           {/* Tag list */}
           <div className="max-h-56 overflow-y-auto p-1.5">
             {availableTags.length === 0 && !creating && (
-              <p className="px-3 py-2 text-sm text-text-muted">No tags yet</p>
+              <p className="px-3 py-2 text-sm text-text-tertiary">No tags yet</p>
             )}
 
             {availableTags.map((tag) => {

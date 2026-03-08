@@ -190,13 +190,13 @@ export default function NoteEditorPage({
         <div className="flex items-center gap-2">
           <button
             onClick={() => router.push("/notes")}
-            className="rounded-md p-1.5 text-text-muted hover:bg-surface-hover hover:text-text-secondary transition-colors cursor-pointer md:hidden"
+            className="rounded-md p-1.5 text-text-tertiary hover:bg-surface-hover hover:text-text-primary transition-colors cursor-pointer md:hidden"
           >
             <ArrowLeft size={18} />
           </button>
 
           {/* Save indicator */}
-          <div className="flex items-center gap-1.5 text-xs text-text-muted">
+          <div className="flex items-center gap-1.5 text-xs text-text-tertiary">
             {saving ? (
               <>
                 <Save size={12} className="animate-pulse" />
@@ -218,7 +218,7 @@ export default function NoteEditorPage({
               "rounded-md p-1.5 transition-colors cursor-pointer",
               note.isPinned
                 ? "text-accent bg-accent-light hover:opacity-80"
-                : "text-text-muted hover:bg-surface-hover hover:text-text-secondary",
+                : "text-text-tertiary hover:bg-surface-hover hover:text-text-primary",
             ].join(" ")}
             title={note.isPinned ? "Unpin note" : "Pin note"}
           >
@@ -226,7 +226,7 @@ export default function NoteEditorPage({
           </button>
           <button
             onClick={handleDelete}
-            className="rounded-md p-1.5 text-text-muted hover:bg-danger-light hover:text-danger transition-colors cursor-pointer"
+            className="rounded-md p-1.5 text-text-tertiary hover:bg-danger-light hover:text-danger transition-colors cursor-pointer"
             title="Delete note"
           >
             <Trash2 size={16} />

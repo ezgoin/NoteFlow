@@ -77,7 +77,7 @@ export default function SearchBar({
     >
       <Search
         size={16}
-        className="pointer-events-none absolute left-3 text-text-muted"
+        className="pointer-events-none absolute left-3 text-text-tertiary"
       />
 
       <input
@@ -93,7 +93,7 @@ export default function SearchBar({
       {internalValue.length > 0 && (
         <button
           onClick={handleClear}
-          className="absolute right-2 rounded p-0.5 text-text-muted hover:text-text-secondary transition-colors cursor-pointer"
+          className="absolute right-2 rounded p-0.5 text-text-tertiary hover:text-text-primary transition-colors cursor-pointer"
           aria-label="Clear search"
         >
           <X size={14} />

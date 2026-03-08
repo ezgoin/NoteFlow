@@ -84,7 +84,7 @@ export default function Modal({ isOpen, onClose, title, children }: ModalProps) 
             <h2 className="text-lg font-semibold text-text-primary">{title}</h2>
             <button
               onClick={onClose}
-              className="rounded-md p-1 text-text-muted hover:bg-surface-hover hover:text-text-secondary transition-colors cursor-pointer"
+              className="rounded-md p-1 text-text-tertiary hover:bg-surface-hover hover:text-text-primary transition-colors cursor-pointer"
               aria-label="Close dialog"
             >
               <X size={18} />

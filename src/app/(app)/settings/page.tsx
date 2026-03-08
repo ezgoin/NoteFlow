@@ -198,7 +198,7 @@ export default function SettingsPage() {
       <div className="flex items-center gap-3 border-b border-border px-6 py-4">
         <button
           onClick={() => router.push("/notes")}
-          className="rounded-md p-1.5 text-text-muted hover:bg-surface-hover hover:text-text-secondary transition-colors cursor-pointer"
+          className="rounded-md p-1.5 text-text-tertiary hover:bg-surface-hover hover:text-text-primary transition-colors cursor-pointer"
         >
           <ArrowLeft size={18} />
         </button>
@@ -211,7 +211,7 @@ export default function SettingsPage() {
           {/* Appearance */}
           <section>
             <div className="mb-4 flex items-center gap-2">
-              <Palette size={18} className="text-text-muted" />
+              <Palette size={18} className="text-text-secondary" />
               <h2 className="text-lg font-semibold text-text-primary">
                 Appearance
               </h2>
@@ -236,7 +236,7 @@ export default function SettingsPage() {
           {/* Account */}
           <section>
             <div className="mb-4 flex items-center gap-2">
-              <User size={18} className="text-text-muted" />
+              <User size={18} className="text-text-secondary" />
               <h2 className="text-lg font-semibold text-text-primary">
                 Account
               </h2>
@@ -244,7 +244,7 @@ export default function SettingsPage() {
 
             <div className="rounded-xl border border-border bg-surface p-5 space-y-3">
               <div>
-                <p className="text-xs font-medium text-text-muted uppercase tracking-wider">
+                <p className="text-xs font-medium text-text-tertiary uppercase tracking-wider">
                   Name
                 </p>
                 <p className="mt-0.5 text-sm text-text-primary">
@@ -252,7 +252,7 @@ export default function SettingsPage() {
                 </p>
               </div>
               <div>
-                <p className="text-xs font-medium text-text-muted uppercase tracking-wider">
+                <p className="text-xs font-medium text-text-tertiary uppercase tracking-wider">
                   Email
                 </p>
                 <p className="mt-0.5 text-sm text-text-primary">

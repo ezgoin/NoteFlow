@@ -103,7 +103,7 @@ function FolderNode({
           }}
           className={[
             "rounded p-0.5 transition-transform cursor-pointer",
-            hasChildren ? "text-text-muted" : "invisible",
+            hasChildren ? "text-text-tertiary" : "invisible",
           ].join(" ")}
         >
           <ChevronRight
@@ -116,7 +116,7 @@ function FolderNode({
         {expanded && hasChildren ? (
           <FolderOpen size={16} className="shrink-0 text-accent" />
         ) : (
-          <FolderIcon size={16} className="shrink-0 text-text-muted" />
+          <FolderIcon size={16} className="shrink-0 text-text-tertiary" />
         )}
 
         {/* Folder name OR rename input — NOT nested inside a button */}
@@ -160,7 +160,7 @@ function FolderNode({
                   setShowNewChild(true);
                   setExpanded(true);
                 }}
-                className="rounded p-1 text-text-muted hover:bg-surface-hover hover:text-text-secondary cursor-pointer"
+                className="rounded p-1 text-text-tertiary hover:bg-surface-hover hover:text-text-primary cursor-pointer"
                 title="New subfolder"
               >
                 <Plus size={12} />
@@ -171,7 +171,7 @@ function FolderNode({
                 e.stopPropagation();
                 startEditing();
               }}
-              className="rounded p-1 text-text-muted hover:bg-surface-hover hover:text-text-secondary cursor-pointer"
+              className="rounded p-1 text-text-tertiary hover:bg-surface-hover hover:text-text-primary cursor-pointer"
               title="Rename"
             >
               <Pencil size={12} />
@@ -182,7 +182,7 @@ function FolderNode({
                 if (!confirm("Delete this folder? Notes inside will be moved to All Notes.")) return;
                 onDelete(folder.id);
               }}
-              className="rounded p-1 text-text-muted hover:bg-danger-light hover:text-danger cursor-pointer"
+              className="rounded p-1 text-text-tertiary hover:bg-danger-light hover:text-danger cursor-pointer"
               title="Delete"
             >
               <Trash2 size={12} />
@@ -197,7 +197,7 @@ function FolderNode({
           className="flex items-center gap-1.5 px-2 py-1"
           style={{ paddingLeft: `${(depth + 1) * 16 + 8}px` }}
         >
-          <FolderIcon size={14} className="shrink-0 text-text-placeholder" />
+          <FolderIcon size={14} className="shrink-0 text-text-tertiary" />
           <input
             autoFocus
             value={newChildName}
@@ -229,7 +229,7 @@ function FolderNode({
               setShowNewChild(false);
               setNewChildName("");
             }}
-            className="rounded p-1 text-text-muted hover:bg-surface-hover cursor-pointer"
+            className="rounded p-1 text-text-tertiary hover:bg-surface-hover cursor-pointer"
           >
             <X size={14} />
           </button>
@@ -315,7 +315,7 @@ export default function FolderTree({
       {/* New root folder */}
       {showNewRoot ? (
         <div className="flex items-center gap-1.5 px-3 py-1">
-          <FolderIcon size={14} className="shrink-0 text-text-placeholder" />
+          <FolderIcon size={14} className="shrink-0 text-text-tertiary" />
           <input
             autoFocus
             value={newRootName}
@@ -347,7 +347,7 @@ export default function FolderTree({
               setShowNewRoot(false);
               setNewRootName("");
             }}
-            className="rounded p-1 text-text-muted hover:bg-surface-hover cursor-pointer"
+            className="rounded p-1 text-text-tertiary hover:bg-surface-hover cursor-pointer"
           >
             <X size={14} />
           </button>
@@ -355,7 +355,7 @@ export default function FolderTree({
       ) : (
         <button
           onClick={() => setShowNewRoot(true)}
-          className="flex w-full items-center gap-2 rounded-md px-3 py-1.5 text-sm text-text-muted hover:bg-surface-hover hover:text-text-secondary transition-colors cursor-pointer"
+          className="flex w-full items-center gap-2 rounded-md px-3 py-1.5 text-sm text-text-tertiary hover:bg-surface-hover hover:text-text-primary transition-colors cursor-pointer"
         >
           <Plus size={14} />
           New folder

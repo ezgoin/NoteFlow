@@ -121,7 +121,7 @@ export default function Sidebar() {
         <h1 className="text-lg font-bold text-accent">NoteFlow</h1>
         <button
           onClick={() => setSidebarOpen(false)}
-          className="rounded-md p-1 text-text-muted hover:bg-surface-hover hover:text-text-secondary transition-colors cursor-pointer"
+          className="rounded-md p-1 text-text-tertiary hover:bg-surface-hover hover:text-text-primary transition-colors cursor-pointer"
           title="Collapse sidebar"
         >
           <PanelLeftClose size={18} />
@@ -132,7 +132,7 @@ export default function Sidebar() {
       <div className="flex-1 overflow-y-auto">
         {/* Folders */}
         <div className="px-3 py-3">
-          <p className="mb-1.5 px-1 text-xs font-semibold uppercase tracking-wider text-text-muted">
+          <p className="mb-1.5 px-1 text-xs font-semibold uppercase tracking-wider text-text-secondary">
             Folders
           </p>
           <FolderTree
@@ -152,7 +152,7 @@ export default function Sidebar() {
 
         {/* Tags filter */}
         <div className="px-3 py-3">
-          <p className="mb-2 px-1 text-xs font-semibold uppercase tracking-wider text-text-muted flex items-center gap-1.5">
+          <p className="mb-2 px-1 text-xs font-semibold uppercase tracking-wider text-text-secondary flex items-center gap-1.5">
             <Tag size={12} />
             Tags
           </p>
@@ -183,7 +183,7 @@ export default function Sidebar() {
               );
             })}
             {tags.length === 0 && (
-              <p className="text-xs text-text-muted">No tags yet</p>
+              <p className="text-xs text-text-tertiary">No tags yet</p>
             )}
           </div>
         </div>
@@ -194,12 +194,12 @@ export default function Sidebar() {
         <div className="px-3 py-1.5">
           <button
             onClick={() => router.push("/trash")}
-            className="flex w-full items-center gap-2 rounded-md px-1 py-2 text-sm text-text-secondary hover:bg-surface-hover transition-colors cursor-pointer"
+            className="flex w-full items-center gap-2 rounded-md px-1 py-2 text-sm text-text-primary hover:bg-surface-hover transition-colors cursor-pointer"
           >
             <Trash2 size={16} />
             Trash
             {notes.filter((n) => n.isTrashed).length > 0 && (
-              <span className="ml-auto rounded-full bg-surface-hover px-1.5 py-0.5 text-[10px] font-medium text-text-tertiary">
+              <span className="ml-auto rounded-full bg-surface-hover px-1.5 py-0.5 text-[10px] font-medium text-text-secondary">
                 {notes.filter((n) => n.isTrashed).length}
               </span>
             )}
@@ -212,7 +212,7 @@ export default function Sidebar() {
         <div className="flex items-center justify-between">
           <button
             onClick={() => router.push("/settings")}
-            className="flex items-center gap-1.5 truncate rounded-md px-2 py-1 text-xs text-text-muted hover:bg-surface-hover hover:text-text-secondary transition-colors cursor-pointer"
+            className="flex items-center gap-1.5 truncate rounded-md px-2 py-1 text-xs text-text-tertiary hover:bg-surface-hover hover:text-text-primary transition-colors cursor-pointer"
             title="Settings"
           >
             <Settings size={13} className="shrink-0" />
@@ -220,7 +220,7 @@ export default function Sidebar() {
           </button>
           <button
             onClick={() => signOut({ callbackUrl: "/login" })}
-            className="rounded-md p-1.5 text-text-muted hover:bg-surface-hover hover:text-text-secondary transition-colors cursor-pointer"
+            className="rounded-md p-1.5 text-text-tertiary hover:bg-surface-hover hover:text-text-primary transition-colors cursor-pointer"
             title="Sign out"
           >
             <LogOut size={14} />

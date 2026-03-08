@@ -49,7 +49,7 @@ function ToolbarButton({
         "rounded-md p-1.5 transition-colors cursor-pointer",
         isActive
           ? "bg-accent-light text-accent"
-          : "text-text-tertiary hover:bg-surface-hover hover:text-text-secondary",
+          : "text-text-secondary hover:bg-surface-hover hover:text-text-primary",
         disabled ? "opacity-30 cursor-not-allowed" : "",
       ].join(" ")}
     >
