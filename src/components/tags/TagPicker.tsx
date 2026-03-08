@@ -100,7 +100,7 @@ export default function TagPicker({
       <button
         type="button"
         onClick={() => setOpen((v) => !v)}
-        className="inline-flex items-center gap-1.5 rounded-lg border border-gray-300 bg-white px-3 py-1.5 text-sm font-medium text-gray-700 shadow-sm hover:bg-gray-50 transition-colors cursor-pointer"
+        className="inline-flex items-center gap-1.5 rounded-lg border border-border-strong bg-surface px-3 py-1.5 text-sm font-medium text-text-secondary shadow-sm hover:bg-surface-hover transition-colors cursor-pointer"
       >
         Tags
         <ChevronDown
@@ -111,11 +111,11 @@ export default function TagPicker({
 
       {/* Dropdown */}
       {open && (
-        <div className="absolute left-0 z-40 mt-1.5 w-64 origin-top-left rounded-xl border border-gray-200 bg-white shadow-lg">
+        <div className="absolute left-0 z-40 mt-1.5 w-64 origin-top-left rounded-xl border border-border bg-surface shadow-lg">
           {/* Tag list */}
           <div className="max-h-56 overflow-y-auto p-1.5">
             {availableTags.length === 0 && !creating && (
-              <p className="px-3 py-2 text-sm text-gray-400">No tags yet</p>
+              <p className="px-3 py-2 text-sm text-text-muted">No tags yet</p>
             )}
 
             {availableTags.map((tag) => {
@@ -125,7 +125,7 @@ export default function TagPicker({
                   key={tag.id}
                   type="button"
                   onClick={() => onToggle(tag.id)}
-                  className="flex w-full items-center gap-2.5 rounded-lg px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 transition-colors cursor-pointer"
+                  className="flex w-full items-center gap-2.5 rounded-lg px-3 py-2 text-sm text-text-secondary hover:bg-surface-hover transition-colors cursor-pointer"
                 >
                   {/* Colour-coded checkbox */}
                   <span
@@ -145,7 +145,7 @@ export default function TagPicker({
           </div>
 
           {/* Divider */}
-          <div className="border-t border-gray-100" />
+          <div className="border-t border-border" />
 
           {/* Create new tag */}
           {creating ? (
@@ -157,7 +157,7 @@ export default function TagPicker({
                 onChange={(e) => setNewName(e.target.value)}
                 onKeyDown={handleKeyDown}
                 placeholder="Tag name"
-                className="w-full rounded-md border border-gray-300 px-2.5 py-1.5 text-sm text-gray-900 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-500/40 focus:border-indigo-500"
+                className="w-full rounded-md border border-border-strong bg-surface px-2.5 py-1.5 text-sm text-text-primary placeholder:text-text-placeholder focus:outline-none focus:ring-2 focus:ring-ring/40 focus:border-accent"
               />
 
               {/* Colour swatches */}
@@ -183,14 +183,14 @@ export default function TagPicker({
                 <button
                   type="button"
                   onClick={() => setCreating(false)}
-                  className="rounded-md px-2.5 py-1 text-xs text-gray-500 hover:bg-gray-100 transition-colors cursor-pointer"
+                  className="rounded-md px-2.5 py-1 text-xs text-text-tertiary hover:bg-surface-hover transition-colors cursor-pointer"
                 >
                   Cancel
                 </button>
                 <button
                   type="submit"
                   disabled={newName.trim().length === 0}
-                  className="rounded-md bg-indigo-600 px-2.5 py-1 text-xs font-medium text-white hover:bg-indigo-700 disabled:opacity-40 disabled:cursor-not-allowed transition-colors cursor-pointer"
+                  className="rounded-md bg-accent px-2.5 py-1 text-xs font-medium text-white hover:bg-accent-hover disabled:opacity-40 disabled:cursor-not-allowed transition-colors cursor-pointer"
                 >
                   Add
                 </button>
@@ -200,7 +200,7 @@ export default function TagPicker({
             <button
               type="button"
               onClick={() => setCreating(true)}
-              className="flex w-full items-center gap-2 px-4 py-2.5 text-sm text-indigo-600 hover:bg-indigo-50 transition-colors cursor-pointer"
+              className="flex w-full items-center gap-2 px-4 py-2.5 text-sm text-accent hover:bg-accent-light transition-colors cursor-pointer"
             >
               <Plus size={14} />
               Create new tag

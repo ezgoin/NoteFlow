@@ -31,10 +31,10 @@ interface TaskItemProps {
 /* ------------------------------------------------------------------ */
 
 const priorityConfig: Record<Priority, { label: string; classes: string }> = {
-  low: { label: "Low", classes: "bg-gray-100 text-gray-600" },
-  medium: { label: "Medium", classes: "bg-blue-50 text-blue-700" },
-  high: { label: "High", classes: "bg-orange-50 text-orange-700" },
-  urgent: { label: "Urgent", classes: "bg-red-50 text-red-700" },
+  low: { label: "Low", classes: "bg-surface-hover text-text-tertiary" },
+  medium: { label: "Medium", classes: "bg-blue-500/10 text-blue-500" },
+  high: { label: "High", classes: "bg-orange-500/10 text-orange-500" },
+  urgent: { label: "Urgent", classes: "bg-red-500/10 text-red-500" },
 };
 
 /* ------------------------------------------------------------------ */
@@ -91,15 +91,15 @@ export default function TaskItem({
   const priority = priorityConfig[task.priority] ?? priorityConfig.medium;
 
   return (
-    <div className="group flex items-center gap-3 rounded-lg border border-gray-100 bg-white px-3 py-2.5 transition-shadow hover:shadow-sm">
+    <div className="group flex items-center gap-3 rounded-lg border border-border bg-surface px-3 py-2.5 transition-shadow hover:shadow-sm">
       {/* Checkbox */}
       <button
         onClick={() => onToggle(task.id)}
         className={[
           "flex size-[18px] shrink-0 items-center justify-center rounded-full border-2 transition-colors cursor-pointer",
           isDone
-            ? "border-indigo-500 bg-indigo-500"
-            : "border-gray-300 hover:border-indigo-400",
+            ? "border-accent bg-accent"
+            : "border-border-strong hover:border-accent",
         ].join(" ")}
         aria-label={isDone ? "Mark as incomplete" : "Mark as complete"}
       >
@@ -129,14 +129,14 @@ export default function TaskItem({
             onChange={(e) => setDraft(e.target.value)}
             onBlur={commitEdit}
             onKeyDown={handleKeyDown}
-            className="w-full rounded border border-indigo-300 bg-indigo-50/40 px-1.5 py-0.5 text-sm text-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500/40"
+            className="w-full rounded border border-accent bg-accent-light/40 px-1.5 py-0.5 text-sm text-text-primary focus:outline-none focus:ring-2 focus:ring-ring/40"
           />
         ) : (
           <button
             onClick={() => setEditing(true)}
             className={[
               "w-full truncate text-left text-sm cursor-pointer transition-colors",
-              isDone ? "text-gray-400 line-through" : "text-gray-900",
+              isDone ? "text-text-muted line-through" : "text-text-primary",
             ].join(" ")}
             title="Click to edit title"
           >
@@ -160,7 +160,7 @@ export default function TaskItem({
         <span
           className={[
             "flex shrink-0 items-center gap-1 text-xs whitespace-nowrap",
-            dueDateOverdue ? "text-red-600 font-medium" : "text-gray-500",
+            dueDateOverdue ? "text-danger font-medium" : "text-text-tertiary",
           ].join(" ")}
         >
           <Calendar size={12} />
@@ -172,14 +172,14 @@ export default function TaskItem({
       <div className="flex shrink-0 items-center gap-0.5 opacity-0 transition-opacity group-hover:opacity-100">
         <button
           onClick={() => onEdit(task.id)}
-          className="rounded-md p-1.5 text-gray-400 hover:bg-gray-100 hover:text-gray-600 transition-colors cursor-pointer"
+          className="rounded-md p-1.5 text-text-muted hover:bg-surface-hover hover:text-text-secondary transition-colors cursor-pointer"
           aria-label="Edit task"
         >
           <Pencil size={14} />
         </button>
         <button
           onClick={() => onDelete(task.id)}
-          className="rounded-md p-1.5 text-gray-400 hover:bg-red-50 hover:text-red-600 transition-colors cursor-pointer"
+          className="rounded-md p-1.5 text-text-muted hover:bg-danger-light hover:text-danger transition-colors cursor-pointer"
           aria-label="Delete task"
         >
           <Trash2 size={14} />

@@ -48,8 +48,8 @@ function ToolbarButton({
       className={[
         "rounded-md p-1.5 transition-colors cursor-pointer",
         isActive
-          ? "bg-indigo-100 text-indigo-700"
-          : "text-gray-500 hover:bg-gray-100 hover:text-gray-700",
+          ? "bg-accent-light text-accent"
+          : "text-text-tertiary hover:bg-surface-hover hover:text-text-secondary",
         disabled ? "opacity-30 cursor-not-allowed" : "",
       ].join(" ")}
     >
@@ -76,7 +76,7 @@ function BoldIcon({ size = 16 }: { size?: number }) {
 }
 
 function Divider() {
-  return <div className="mx-1 h-6 w-px bg-gray-200" />;
+  return <div className="mx-1 h-6 w-px bg-border" />;
 }
 
 export default function MenuBar({ editor }: MenuBarProps) {
@@ -97,7 +97,7 @@ export default function MenuBar({ editor }: MenuBarProps) {
   const iconSize = 16;
 
   return (
-    <div className="flex flex-wrap items-center gap-0.5 border-b border-gray-200 bg-gray-50/50 px-2 py-1.5 rounded-t-lg">
+    <div className="flex flex-wrap items-center gap-0.5 border-b border-border bg-surface-secondary/50 px-2 py-1.5 rounded-t-lg">
       {/* Undo / Redo */}
       <ToolbarButton
         onClick={() => editor.chain().focus().undo().run()}

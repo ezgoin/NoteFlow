@@ -71,13 +71,13 @@ export default function SearchBar({
   return (
     <div
       className={[
-        "relative flex items-center rounded-lg border border-gray-200 bg-gray-50 transition-colors focus-within:border-indigo-400 focus-within:bg-white focus-within:ring-2 focus-within:ring-indigo-500/30",
+        "relative flex items-center rounded-lg border border-border bg-surface-secondary transition-colors focus-within:border-accent focus-within:bg-surface focus-within:ring-2 focus-within:ring-ring/30",
         className,
       ].join(" ")}
     >
       <Search
         size={16}
-        className="pointer-events-none absolute left-3 text-gray-400"
+        className="pointer-events-none absolute left-3 text-text-muted"
       />
 
       <input
@@ -86,14 +86,14 @@ export default function SearchBar({
         value={internalValue}
         onChange={handleChange}
         placeholder={placeholder}
-        className="w-full bg-transparent py-2 pl-9 pr-8 text-sm text-gray-900 placeholder:text-gray-400 focus:outline-none"
+        className="w-full bg-transparent py-2 pl-9 pr-8 text-sm text-text-primary placeholder:text-text-placeholder focus:outline-none"
         aria-label="Search"
       />
 
       {internalValue.length > 0 && (
         <button
           onClick={handleClear}
-          className="absolute right-2 rounded p-0.5 text-gray-400 hover:text-gray-600 transition-colors cursor-pointer"
+          className="absolute right-2 rounded p-0.5 text-text-muted hover:text-text-secondary transition-colors cursor-pointer"
           aria-label="Clear search"
         >
           <X size={14} />

@@ -77,7 +77,7 @@ export default function NoteEditor({
   }, [content, editor]);
 
   return (
-    <div className="flex flex-col rounded-lg border border-gray-200 bg-white">
+    <div className="flex flex-col rounded-lg border border-border bg-surface">
       <MenuBar editor={editor} />
       <EditorContent editor={editor} />
     </div>

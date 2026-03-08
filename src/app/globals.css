@@ -1,35 +1,261 @@
 @import "tailwindcss";
 
+/* ========================================================================
+   THEME: Light (default)
+   ======================================================================== */
 :root {
+  /* Page */
   --background: #ffffff;
   --foreground: #111827;
+
+  /* Surfaces */
+  --surface: #ffffff;
+  --surface-secondary: #f9fafb;
+  --surface-hover: #f3f4f6;
+  --surface-active: #eef2ff;
+
+  /* Sidebar */
   --sidebar-bg: #f9fafb;
   --sidebar-border: #e5e7eb;
-  --accent: #6366f1;
+  --sidebar-hover: #f3f4f6;
+
+  /* Text */
+  --text-primary: #111827;
+  --text-secondary: #374151;
+  --text-tertiary: #6b7280;
+  --text-muted: #9ca3af;
+  --text-placeholder: #9ca3af;
+
+  /* Borders */
+  --border: #e5e7eb;
+  --border-strong: #d1d5db;
+  --border-subtle: #f3f4f6;
+
+  /* Accent */
+  --accent: #4f46e5;
+  --accent-hover: #4338ca;
   --accent-light: #eef2ff;
-  --muted: #6b7280;
-  --danger: #ef4444;
+  --accent-text: #4338ca;
+  --accent-muted: #818cf8;
+
+  /* Focus */
+  --ring: #818cf8;
+  --ring-offset: #ffffff;
+
+  /* Feedback */
+  --danger: #dc2626;
+  --danger-light: #fef2f2;
+  --danger-hover: #b91c1c;
+  --success: #16a34a;
+  --success-light: #f0fdf4;
+  --warning: #ea580c;
+
+  /* Editor */
+  --editor-bg: #ffffff;
+  --editor-border: #e5e7eb;
+  --editor-toolbar-bg: rgba(249, 250, 251, 0.5);
+  --code-bg: #f3f4f6;
+  --code-block-bg: #1e1e2e;
+  --code-block-text: #cdd6f4;
+  --highlight-bg: #fef08a;
+  --blockquote-border: #4f46e5;
+  --hr-color: #e5e7eb;
+
+  /* Overlay */
+  --overlay-bg: rgba(0, 0, 0, 0.4);
 }
 
+/* ========================================================================
+   THEME: Dark (Slack-inspired)
+   ======================================================================== */
+[data-theme="dark"] {
+  --background: #1e2228;
+  --foreground: #d1d5db;
+  --surface: #262b33;
+  --surface-secondary: #1a1d21;
+  --surface-hover: #2f353d;
+  --surface-active: #2d2f54;
+  --sidebar-bg: #1a1d21;
+  --sidebar-border: #333840;
+  --sidebar-hover: #2a2e34;
+  --text-primary: #e5e7eb;
+  --text-secondary: #b0b5bd;
+  --text-tertiary: #8b929b;
+  --text-muted: #636a75;
+  --text-placeholder: #636a75;
+  --border: #333840;
+  --border-strong: #444c56;
+  --border-subtle: #262b33;
+  --accent: #818cf8;
+  --accent-hover: #6366f1;
+  --accent-light: #2d2f54;
+  --accent-text: #a5b4fc;
+  --accent-muted: #6366f1;
+  --ring: #6366f1;
+  --ring-offset: #1e2228;
+  --danger: #f87171;
+  --danger-light: #3b1c1c;
+  --danger-hover: #ef4444;
+  --success: #4ade80;
+  --success-light: #1a3326;
+  --warning: #fb923c;
+  --editor-bg: #262b33;
+  --editor-border: #333840;
+  --editor-toolbar-bg: #1a1d21;
+  --code-bg: #333840;
+  --code-block-bg: #0d1117;
+  --code-block-text: #cdd6f4;
+  --highlight-bg: #854d0e;
+  --blockquote-border: #818cf8;
+  --hr-color: #333840;
+  --overlay-bg: rgba(0, 0, 0, 0.6);
+}
+
+/* ========================================================================
+   THEME: Aubergine (Slack classic)
+   ======================================================================== */
+[data-theme="aubergine"] {
+  --background: #1e2228;
+  --foreground: #d1d5db;
+  --surface: #262b33;
+  --surface-secondary: #1a1d21;
+  --surface-hover: #2f353d;
+  --surface-active: #3d1f4e;
+  --sidebar-bg: #4a154b;
+  --sidebar-border: #5c2d5e;
+  --sidebar-hover: #5c2d5e;
+  --text-primary: #e5e7eb;
+  --text-secondary: #b0b5bd;
+  --text-tertiary: #8b929b;
+  --text-muted: #636a75;
+  --text-placeholder: #636a75;
+  --border: #333840;
+  --border-strong: #444c56;
+  --border-subtle: #262b33;
+  --accent: #e0a7f0;
+  --accent-hover: #c084d8;
+  --accent-light: #3d1f4e;
+  --accent-text: #e0a7f0;
+  --accent-muted: #a855f7;
+  --ring: #a855f7;
+  --ring-offset: #1e2228;
+  --danger: #f87171;
+  --danger-light: #3b1c1c;
+  --danger-hover: #ef4444;
+  --success: #4ade80;
+  --success-light: #1a3326;
+  --warning: #fb923c;
+  --editor-bg: #262b33;
+  --editor-border: #333840;
+  --editor-toolbar-bg: #1a1d21;
+  --code-bg: #333840;
+  --code-block-bg: #0d1117;
+  --code-block-text: #cdd6f4;
+  --highlight-bg: #854d0e;
+  --blockquote-border: #e0a7f0;
+  --hr-color: #333840;
+  --overlay-bg: rgba(0, 0, 0, 0.6);
+}
+
+/* ========================================================================
+   THEME: Ocean (deep blue)
+   ======================================================================== */
+[data-theme="ocean"] {
+  --background: #0f172a;
+  --foreground: #cbd5e1;
+  --surface: #1e293b;
+  --surface-secondary: #0f172a;
+  --surface-hover: #273449;
+  --surface-active: #1e3a5f;
+  --sidebar-bg: #0c1524;
+  --sidebar-border: #1e3a5f;
+  --sidebar-hover: #1a2e4a;
+  --text-primary: #e2e8f0;
+  --text-secondary: #94a3b8;
+  --text-tertiary: #64748b;
+  --text-muted: #475569;
+  --text-placeholder: #475569;
+  --border: #1e3a5f;
+  --border-strong: #2d4a6f;
+  --border-subtle: #162033;
+  --accent: #38bdf8;
+  --accent-hover: #0ea5e9;
+  --accent-light: #0c2d48;
+  --accent-text: #7dd3fc;
+  --accent-muted: #0284c7;
+  --ring: #0284c7;
+  --ring-offset: #0f172a;
+  --danger: #f87171;
+  --danger-light: #3b1c1c;
+  --danger-hover: #ef4444;
+  --success: #4ade80;
+  --success-light: #1a3326;
+  --warning: #fb923c;
+  --editor-bg: #1e293b;
+  --editor-border: #1e3a5f;
+  --editor-toolbar-bg: #0f172a;
+  --code-bg: #1e3a5f;
+  --code-block-bg: #020617;
+  --code-block-text: #e2e8f0;
+  --highlight-bg: #854d0e;
+  --blockquote-border: #38bdf8;
+  --hr-color: #1e3a5f;
+  --overlay-bg: rgba(0, 0, 0, 0.7);
+}
+
+/* ========================================================================
+   Tailwind v4 Theme Mapping
+   ======================================================================== */
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-surface: var(--surface);
+  --color-surface-secondary: var(--surface-secondary);
+  --color-surface-hover: var(--surface-hover);
+  --color-surface-active: var(--surface-active);
   --color-sidebar-bg: var(--sidebar-bg);
   --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-hover: var(--sidebar-hover);
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-text-tertiary: var(--text-tertiary);
+  --color-text-muted: var(--text-muted);
+  --color-text-placeholder: var(--text-placeholder);
+  --color-border: var(--border);
+  --color-border-strong: var(--border-strong);
+  --color-border-subtle: var(--border-subtle);
   --color-accent: var(--accent);
+  --color-accent-hover: var(--accent-hover);
   --color-accent-light: var(--accent-light);
-  --color-muted: var(--muted);
+  --color-accent-text: var(--accent-text);
+  --color-accent-muted: var(--accent-muted);
+  --color-ring: var(--ring);
+  --color-ring-offset: var(--ring-offset);
   --color-danger: var(--danger);
+  --color-danger-light: var(--danger-light);
+  --color-danger-hover: var(--danger-hover);
+  --color-success: var(--success);
+  --color-success-light: var(--success-light);
+  --color-warning: var(--warning);
+  --color-editor-bg: var(--editor-bg);
+  --color-editor-border: var(--editor-border);
+  --color-editor-toolbar-bg: var(--editor-toolbar-bg);
+  --color-overlay-bg: var(--overlay-bg);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
+/* ========================================================================
+   Base Styles
+   ======================================================================== */
 body {
   background: var(--background);
   color: var(--foreground);
 }
 
-/* TipTap editor styles */
+/* ========================================================================
+   TipTap Editor Styles
+   ======================================================================== */
 .tiptap {
   outline: none;
   min-height: 300px;
@@ -97,7 +323,7 @@ body {
 .tiptap ul[data-type="taskList"] li label input[type="checkbox"] {
   width: 1rem;
   height: 1rem;
-  accent-color: #6366f1;
+  accent-color: var(--accent);
   cursor: pointer;
 }
 
@@ -112,12 +338,12 @@ body {
 
 .tiptap ul[data-type="taskList"] li[data-checked="true"] > div > p {
   text-decoration: line-through;
-  color: #9ca3af;
+  color: var(--text-muted);
 }
 
 .tiptap pre {
-  background: #1e1e2e;
-  color: #cdd6f4;
+  background: var(--code-block-bg);
+  color: var(--code-block-text);
   padding: 1rem;
   border-radius: 0.5rem;
   overflow-x: auto;
@@ -127,7 +353,7 @@ body {
 }
 
 .tiptap code {
-  background: #f3f4f6;
+  background: var(--code-bg);
   padding: 0.15em 0.3em;
   border-radius: 0.25rem;
   font-size: 0.875em;
@@ -139,28 +365,28 @@ body {
 }
 
 .tiptap mark {
-  background-color: #fef08a;
+  background-color: var(--highlight-bg);
   padding: 0.1em 0.2em;
   border-radius: 0.15rem;
 }
 
 .tiptap hr {
   border: none;
-  border-top: 2px solid #e5e7eb;
+  border-top: 2px solid var(--hr-color);
   margin: 1.5rem 0;
 }
 
 .tiptap blockquote {
-  border-left: 3px solid #6366f1;
+  border-left: 3px solid var(--blockquote-border);
   padding-left: 1rem;
-  color: #6b7280;
+  color: var(--text-tertiary);
   margin: 0.5em 0;
 }
 
 .tiptap p.is-editor-empty:first-child::before {
   content: attr(data-placeholder);
   float: left;
-  color: #9ca3af;
+  color: var(--text-muted);
   pointer-events: none;
   height: 0;
 }

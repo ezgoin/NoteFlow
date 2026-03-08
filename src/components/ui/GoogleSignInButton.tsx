@@ -16,10 +16,10 @@ export default function GoogleSignInButton({ label = "Continue with Google" }: {
       type="button"
       onClick={handleClick}
       disabled={loading}
-      className="flex w-full items-center justify-center gap-3 rounded-lg border border-gray-300 bg-white px-4 py-2.5 text-sm font-medium text-gray-700 shadow-sm transition-colors hover:bg-gray-50 active:bg-gray-100 disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer"
+      className="flex w-full items-center justify-center gap-3 rounded-lg border border-border-strong bg-surface px-4 py-2.5 text-sm font-medium text-text-secondary shadow-sm transition-colors hover:bg-surface-hover active:bg-surface-hover disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer"
     >
       {loading ? (
-        <div className="h-5 w-5 animate-spin rounded-full border-2 border-gray-400 border-t-transparent" />
+        <div className="h-5 w-5 animate-spin rounded-full border-2 border-text-muted border-t-transparent" />
       ) : (
         <svg className="h-5 w-5" viewBox="0 0 24 24">
           <path

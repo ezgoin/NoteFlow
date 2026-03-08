@@ -50,7 +50,7 @@ const STATUS_OPTIONS: { value: Status; label: string }[] = [
 /* ------------------------------------------------------------------ */
 
 const selectClassName =
-  "w-full rounded-lg border border-gray-300 bg-white px-3 py-2 text-sm text-gray-900 transition-colors focus:outline-none focus:ring-2 focus:ring-indigo-500/40 focus:border-indigo-500 cursor-pointer appearance-none";
+  "w-full rounded-lg border border-border-strong bg-surface px-3 py-2 text-sm text-text-primary transition-colors focus:outline-none focus:ring-2 focus:ring-ring/40 focus:border-accent cursor-pointer appearance-none";
 
 /* ------------------------------------------------------------------ */
 /*  Component                                                         */
@@ -115,7 +115,7 @@ export default function TaskForm({
       <div className="flex flex-col gap-1.5">
         <label
           htmlFor="task-description"
-          className="text-sm font-medium text-gray-700 select-none"
+          className="text-sm font-medium text-text-secondary select-none"
         >
           Description
         </label>
@@ -125,7 +125,7 @@ export default function TaskForm({
           value={description}
           onChange={(e) => setDescription(e.target.value)}
           placeholder="Add details..."
-          className="w-full rounded-lg border border-gray-300 bg-white px-3 py-2 text-sm text-gray-900 placeholder:text-gray-400 transition-colors focus:outline-none focus:ring-2 focus:ring-indigo-500/40 focus:border-indigo-500 resize-y"
+          className="w-full rounded-lg border border-border-strong bg-surface px-3 py-2 text-sm text-text-primary placeholder:text-text-placeholder transition-colors focus:outline-none focus:ring-2 focus:ring-ring/40 focus:border-accent resize-y"
         />
       </div>
 
@@ -134,7 +134,7 @@ export default function TaskForm({
         <div className="flex flex-col gap-1.5">
           <label
             htmlFor="task-priority"
-            className="text-sm font-medium text-gray-700 select-none"
+            className="text-sm font-medium text-text-secondary select-none"
           >
             Priority
           </label>
@@ -155,7 +155,7 @@ export default function TaskForm({
         <div className="flex flex-col gap-1.5">
           <label
             htmlFor="task-status"
-            className="text-sm font-medium text-gray-700 select-none"
+            className="text-sm font-medium text-text-secondary select-none"
           >
             Status
           </label>

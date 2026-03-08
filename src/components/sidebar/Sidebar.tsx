@@ -6,6 +6,7 @@ import { signOut, useSession } from "next-auth/react";
 import {
   LogOut,
   PanelLeftClose,
+  Settings,
   StickyNote,
   Tag,
   Trash2,
@@ -105,22 +106,22 @@ export default function Sidebar() {
     return (
       <button
         onClick={() => setSidebarOpen(true)}
-        className="fixed left-2 top-2 z-30 rounded-lg bg-white p-2 shadow-md border border-gray-200 hover:bg-gray-50 transition-colors cursor-pointer"
+        className="fixed left-2 top-2 z-30 rounded-lg bg-surface p-2 shadow-md border border-border hover:bg-surface-hover transition-colors cursor-pointer"
         title="Open sidebar"
       >
-        <StickyNote size={20} className="text-indigo-600" />
+        <StickyNote size={20} className="text-accent" />
       </button>
     );
   }
 
   return (
-    <aside className="flex h-screen w-80 flex-col border-r border-gray-200 bg-gray-50/80">
+    <aside className="flex h-screen w-80 flex-col border-r border-border bg-sidebar">
       {/* Header */}
-      <div className="flex items-center justify-between border-b border-gray-200 px-4 py-3">
-        <h1 className="text-lg font-bold text-indigo-600">NoteFlow</h1>
+      <div className="flex items-center justify-between border-b border-border px-4 py-3">
+        <h1 className="text-lg font-bold text-accent">NoteFlow</h1>
         <button
           onClick={() => setSidebarOpen(false)}
-          className="rounded-md p-1 text-gray-400 hover:bg-gray-200 hover:text-gray-600 transition-colors cursor-pointer"
+          className="rounded-md p-1 text-text-muted hover:bg-surface-hover hover:text-text-secondary transition-colors cursor-pointer"
           title="Collapse sidebar"
         >
           <PanelLeftClose size={18} />
@@ -131,7 +132,7 @@ export default function Sidebar() {
       <div className="flex-1 overflow-y-auto">
         {/* Folders */}
         <div className="px-3 py-3">
-          <p className="mb-1.5 px-1 text-xs font-semibold uppercase tracking-wider text-gray-400">
+          <p className="mb-1.5 px-1 text-xs font-semibold uppercase tracking-wider text-text-muted">
             Folders
           </p>
           <FolderTree
@@ -147,11 +148,11 @@ export default function Sidebar() {
           />
         </div>
 
-        <hr className="border-gray-200" />
+        <hr className="border-border" />
 
         {/* Tags filter */}
         <div className="px-3 py-3">
-          <p className="mb-2 px-1 text-xs font-semibold uppercase tracking-wider text-gray-400 flex items-center gap-1.5">
+          <p className="mb-2 px-1 text-xs font-semibold uppercase tracking-wider text-text-muted flex items-center gap-1.5">
             <Tag size={12} />
             Tags
           </p>
@@ -173,7 +174,7 @@ export default function Sidebar() {
                   className={[
                     "cursor-pointer rounded-full transition-opacity inline-flex",
                     isActive
-                      ? "ring-2 ring-gray-400"
+                      ? "ring-2 ring-text-muted"
                       : "opacity-80 hover:opacity-100",
                   ].join(" ")}
                 >
@@ -182,23 +183,23 @@ export default function Sidebar() {
               );
             })}
             {tags.length === 0 && (
-              <p className="text-xs text-gray-400">No tags yet</p>
+              <p className="text-xs text-text-muted">No tags yet</p>
             )}
           </div>
         </div>
 
-        <hr className="border-gray-200" />
+        <hr className="border-border" />
 
         {/* Trash */}
         <div className="px-3 py-1.5">
           <button
             onClick={() => router.push("/trash")}
-            className="flex w-full items-center gap-2 rounded-md px-1 py-2 text-sm text-gray-600 hover:bg-gray-100 transition-colors cursor-pointer"
+            className="flex w-full items-center gap-2 rounded-md px-1 py-2 text-sm text-text-secondary hover:bg-surface-hover transition-colors cursor-pointer"
           >
             <Trash2 size={16} />
             Trash
             {notes.filter((n) => n.isTrashed).length > 0 && (
-              <span className="ml-auto rounded-full bg-gray-200 px-1.5 py-0.5 text-[10px] font-medium text-gray-500">
+              <span className="ml-auto rounded-full bg-surface-hover px-1.5 py-0.5 text-[10px] font-medium text-text-tertiary">
                 {notes.filter((n) => n.isTrashed).length}
               </span>
             )}
@@ -206,15 +207,20 @@ export default function Sidebar() {
         </div>
       </div>
 
-      {/* User / Sign out — pinned to bottom */}
-      <div className="border-t border-gray-200 px-3 py-2">
+      {/* User / Settings / Sign out — pinned to bottom */}
+      <div className="border-t border-border px-3 py-2">
         <div className="flex items-center justify-between">
-          <span className="truncate px-3 text-xs text-gray-400">
-            {session?.user?.email}
-          </span>
+          <button
+            onClick={() => router.push("/settings")}
+            className="flex items-center gap-1.5 truncate rounded-md px-2 py-1 text-xs text-text-muted hover:bg-surface-hover hover:text-text-secondary transition-colors cursor-pointer"
+            title="Settings"
+          >
+            <Settings size={13} className="shrink-0" />
+            <span className="truncate">{session?.user?.email}</span>
+          </button>
           <button
             onClick={() => signOut({ callbackUrl: "/login" })}
-            className="rounded-md p-1.5 text-gray-400 hover:bg-gray-100 hover:text-gray-600 transition-colors cursor-pointer"
+            className="rounded-md p-1.5 text-text-muted hover:bg-surface-hover hover:text-text-secondary transition-colors cursor-pointer"
             title="Sign out"
           >
             <LogOut size={14} />

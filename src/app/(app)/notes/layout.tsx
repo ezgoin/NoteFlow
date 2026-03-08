@@ -129,7 +129,7 @@ export default function NotesLayout({
   return (
     <div className="flex h-full">
       {/* Notes list panel */}
-      <div className="flex w-80 shrink-0 flex-col border-r border-gray-200 bg-gray-50/50">
+      <div className="flex w-80 shrink-0 flex-col border-r border-border bg-surface-secondary/50">
         {/* Search */}
         <div className="px-3 pt-3">
           <SearchBar
@@ -143,7 +143,7 @@ export default function NotesLayout({
         <div className="px-3 pt-3">
           <button
             onClick={handleNewNote}
-            className="flex w-full items-center justify-center gap-2 rounded-lg bg-indigo-600 px-3 py-2 text-sm font-medium text-white hover:bg-indigo-700 transition-colors cursor-pointer"
+            className="flex w-full items-center justify-center gap-2 rounded-lg bg-accent px-3 py-2 text-sm font-medium text-white hover:bg-accent-hover transition-colors cursor-pointer"
           >
             <Plus size={16} />
             New Note

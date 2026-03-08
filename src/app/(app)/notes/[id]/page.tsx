@@ -176,7 +176,7 @@ export default function NoteEditorPage({
   if (!note) {
     return (
       <div className="flex h-full items-center justify-center">
-        <div className="h-8 w-8 animate-spin rounded-full border-2 border-indigo-600 border-t-transparent" />
+        <div className="h-8 w-8 animate-spin rounded-full border-2 border-accent border-t-transparent" />
       </div>
     );
   }
@@ -186,17 +186,17 @@ export default function NoteEditorPage({
   return (
     <div className="flex h-full flex-col">
       {/* Toolbar */}
-      <div className="flex items-center justify-between border-b border-gray-200 px-4 py-2">
+      <div className="flex items-center justify-between border-b border-border px-4 py-2">
         <div className="flex items-center gap-2">
           <button
             onClick={() => router.push("/notes")}
-            className="rounded-md p-1.5 text-gray-400 hover:bg-gray-100 hover:text-gray-600 transition-colors cursor-pointer md:hidden"
+            className="rounded-md p-1.5 text-text-muted hover:bg-surface-hover hover:text-text-secondary transition-colors cursor-pointer md:hidden"
           >
             <ArrowLeft size={18} />
           </button>
 
           {/* Save indicator */}
-          <div className="flex items-center gap-1.5 text-xs text-gray-400">
+          <div className="flex items-center gap-1.5 text-xs text-text-muted">
             {saving ? (
               <>
                 <Save size={12} className="animate-pulse" />
@@ -217,8 +217,8 @@ export default function NoteEditorPage({
             className={[
               "rounded-md p-1.5 transition-colors cursor-pointer",
               note.isPinned
-                ? "text-indigo-600 bg-indigo-50 hover:bg-indigo-100"
-                : "text-gray-400 hover:bg-gray-100 hover:text-gray-600",
+                ? "text-accent bg-accent-light hover:opacity-80"
+                : "text-text-muted hover:bg-surface-hover hover:text-text-secondary",
             ].join(" ")}
             title={note.isPinned ? "Unpin note" : "Pin note"}
           >
@@ -226,7 +226,7 @@ export default function NoteEditorPage({
           </button>
           <button
             onClick={handleDelete}
-            className="rounded-md p-1.5 text-gray-400 hover:bg-red-50 hover:text-red-600 transition-colors cursor-pointer"
+            className="rounded-md p-1.5 text-text-muted hover:bg-danger-light hover:text-danger transition-colors cursor-pointer"
             title="Delete note"
           >
             <Trash2 size={16} />
@@ -243,7 +243,7 @@ export default function NoteEditorPage({
             onChange={(e) => handleTitleChange(e.target.value)}
             onFocus={(e) => e.target.select()}
             placeholder="Note title"
-            className="w-full text-2xl font-bold text-gray-900 placeholder:text-gray-300 focus:outline-none"
+            className="w-full bg-transparent text-2xl font-bold text-text-primary placeholder:text-text-placeholder focus:outline-none"
           />
 
           {/* Tags */}

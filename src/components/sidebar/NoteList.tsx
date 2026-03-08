@@ -19,7 +19,7 @@ export default function NoteList({
 }: NoteListProps) {
   if (notes.length === 0) {
     return (
-      <div className="px-4 py-8 text-center text-sm text-gray-400">
+      <div className="px-4 py-8 text-center text-sm text-text-muted">
         No notes yet. Create one!
       </div>
     );
@@ -46,8 +46,8 @@ export default function NoteList({
             className={[
               "group relative flex w-full flex-col gap-0.5 rounded-lg px-3 py-2.5 text-left transition-colors cursor-pointer",
               isActive
-                ? "bg-indigo-50 border border-indigo-200"
-                : "hover:bg-gray-50 border border-transparent",
+                ? "bg-accent-light border border-accent/30"
+                : "hover:bg-surface-hover border border-transparent",
             ].join(" ")}
             onClick={() => onSelectNote(note.id)}
             role="button"
@@ -60,17 +60,17 @@ export default function NoteList({
             }}
           >
             <div className="flex items-center gap-1.5">
-              <FileText size={14} className="shrink-0 text-gray-400" />
+              <FileText size={14} className="shrink-0 text-text-muted" />
               <span
                 className={[
                   "flex-1 truncate text-sm font-medium",
-                  isActive ? "text-indigo-700" : "text-gray-900",
+                  isActive ? "text-accent" : "text-text-primary",
                 ].join(" ")}
               >
                 {note.title || "Untitled"}
               </span>
               {note.isPinned && (
-                <Pin size={12} className="shrink-0 text-indigo-400" />
+                <Pin size={12} className="shrink-0 text-accent" />
               )}
               {onTrashNote && (
                 <button
@@ -78,7 +78,7 @@ export default function NoteList({
                     e.stopPropagation();
                     onTrashNote(note.id);
                   }}
-                  className="shrink-0 rounded-md p-0.5 text-gray-300 opacity-0 transition-all hover:bg-red-50 hover:text-red-500 group-hover:opacity-100 cursor-pointer"
+                  className="shrink-0 rounded-md p-0.5 text-text-placeholder opacity-0 transition-all hover:bg-danger-light hover:text-danger group-hover:opacity-100 cursor-pointer"
                   title="Move to trash"
                   aria-label="Move to trash"
                 >
@@ -87,9 +87,9 @@ export default function NoteList({
               )}
             </div>
             {preview && (
-              <p className="truncate text-xs text-gray-400 pl-5">{preview}</p>
+              <p className="truncate text-xs text-text-muted pl-5">{preview}</p>
             )}
-            <p className="text-[11px] text-gray-300 pl-5">
+            <p className="text-[11px] text-text-placeholder pl-5">
               {formatDate(note.updatedAt, {
                 month: "short",
                 day: "numeric",

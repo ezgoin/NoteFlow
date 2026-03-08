@@ -68,15 +68,15 @@ function LoginForm() {
       )}
 
       {/* Card */}
-      <div className="rounded-xl border border-gray-200 bg-white p-6 shadow-sm">
+      <div className="rounded-xl border border-border bg-surface p-6 shadow-sm">
         <GoogleSignInButton label="Sign in with Google" />
 
         <div className="relative my-5">
           <div className="absolute inset-0 flex items-center">
-            <div className="w-full border-t border-gray-200" />
+            <div className="w-full border-t border-border" />
           </div>
           <div className="relative flex justify-center text-xs uppercase">
-            <span className="bg-white px-2 text-gray-400">or</span>
+            <span className="bg-surface px-2 text-text-muted">or</span>
           </div>
         </div>
 
@@ -121,12 +121,12 @@ function LoginForm() {
 
 export default function LoginPage() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-gray-50 px-4">
+    <div className="flex min-h-screen items-center justify-center bg-background px-4">
       <div className="w-full max-w-sm">
         {/* Logo */}
         <div className="mb-8 text-center">
-          <h1 className="text-3xl font-bold text-indigo-600">NoteFlow</h1>
-          <p className="mt-2 text-sm text-gray-500">
+          <h1 className="text-3xl font-bold text-accent">NoteFlow</h1>
+          <p className="mt-2 text-sm text-text-tertiary">
             Sign in to your account
           </p>
         </div>
@@ -135,11 +135,11 @@ export default function LoginPage() {
           <LoginForm />
         </Suspense>
 
-        <p className="mt-6 text-center text-sm text-gray-500">
+        <p className="mt-6 text-center text-sm text-text-tertiary">
           Don&apos;t have an account?{" "}
           <Link
             href="/register"
-            className="font-medium text-indigo-600 hover:text-indigo-500"
+            className="font-medium text-accent hover:opacity-80"
           >
             Create one
           </Link>

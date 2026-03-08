@@ -90,8 +90,8 @@ function FolderNode({
         className={[
           "group flex items-center gap-1 rounded-md px-2 py-1 text-sm transition-colors cursor-pointer",
           isActive
-            ? "bg-indigo-50 text-indigo-700 font-medium"
-            : "text-gray-700 hover:bg-gray-100",
+            ? "bg-accent-light text-accent font-medium"
+            : "text-text-secondary hover:bg-surface-hover",
         ].join(" ")}
         style={{ paddingLeft: `${depth * 16 + 8}px` }}
       >
@@ -103,7 +103,7 @@ function FolderNode({
           }}
           className={[
             "rounded p-0.5 transition-transform cursor-pointer",
-            hasChildren ? "text-gray-400" : "invisible",
+            hasChildren ? "text-text-muted" : "invisible",
           ].join(" ")}
         >
           <ChevronRight
@@ -114,9 +114,9 @@ function FolderNode({
 
         {/* Folder icon */}
         {expanded && hasChildren ? (
-          <FolderOpen size={16} className="shrink-0 text-indigo-500" />
+          <FolderOpen size={16} className="shrink-0 text-accent" />
         ) : (
-          <FolderIcon size={16} className="shrink-0 text-gray-400" />
+          <FolderIcon size={16} className="shrink-0 text-text-muted" />
         )}
 
         {/* Folder name OR rename input — NOT nested inside a button */}
@@ -139,7 +139,7 @@ function FolderNode({
               }
             }}
             onClick={(e) => e.stopPropagation()}
-            className="flex-1 rounded border border-indigo-300 bg-white px-1.5 py-0.5 text-sm focus:outline-none focus:ring-1 focus:ring-indigo-400 min-w-0"
+            className="flex-1 rounded border border-accent bg-surface px-1.5 py-0.5 text-sm text-text-primary focus:outline-none focus:ring-1 focus:ring-ring min-w-0"
           />
         ) : (
           <button
@@ -160,7 +160,7 @@ function FolderNode({
                   setShowNewChild(true);
                   setExpanded(true);
                 }}
-                className="rounded p-1 text-gray-400 hover:bg-gray-200 hover:text-gray-600 cursor-pointer"
+                className="rounded p-1 text-text-muted hover:bg-surface-hover hover:text-text-secondary cursor-pointer"
                 title="New subfolder"
               >
                 <Plus size={12} />
@@ -171,7 +171,7 @@ function FolderNode({
                 e.stopPropagation();
                 startEditing();
               }}
-              className="rounded p-1 text-gray-400 hover:bg-gray-200 hover:text-gray-600 cursor-pointer"
+              className="rounded p-1 text-text-muted hover:bg-surface-hover hover:text-text-secondary cursor-pointer"
               title="Rename"
             >
               <Pencil size={12} />
@@ -182,7 +182,7 @@ function FolderNode({
                 if (!confirm("Delete this folder? Notes inside will be moved to All Notes.")) return;
                 onDelete(folder.id);
               }}
-              className="rounded p-1 text-gray-400 hover:bg-red-50 hover:text-red-500 cursor-pointer"
+              className="rounded p-1 text-text-muted hover:bg-danger-light hover:text-danger cursor-pointer"
               title="Delete"
             >
               <Trash2 size={12} />
@@ -197,7 +197,7 @@ function FolderNode({
           className="flex items-center gap-1.5 px-2 py-1"
           style={{ paddingLeft: `${(depth + 1) * 16 + 8}px` }}
         >
-          <FolderIcon size={14} className="shrink-0 text-gray-300" />
+          <FolderIcon size={14} className="shrink-0 text-text-placeholder" />
           <input
             autoFocus
             value={newChildName}
@@ -216,11 +216,11 @@ function FolderNode({
                 setNewChildName("");
               }
             }}
-            className="flex-1 rounded border border-gray-300 px-1.5 py-0.5 text-sm focus:outline-none focus:ring-1 focus:ring-indigo-400"
+            className="flex-1 rounded border border-border-strong bg-surface px-1.5 py-0.5 text-sm text-text-primary focus:outline-none focus:ring-1 focus:ring-ring"
           />
           <button
             onClick={handleCreateChild}
-            className="rounded p-1 text-green-600 hover:bg-green-50 cursor-pointer"
+            className="rounded p-1 text-green-600 hover:bg-green-50 dark:hover:bg-green-900/20 cursor-pointer"
           >
             <Check size={14} />
           </button>
@@ -229,7 +229,7 @@ function FolderNode({
               setShowNewChild(false);
               setNewChildName("");
             }}
-            className="rounded p-1 text-gray-400 hover:bg-gray-100 cursor-pointer"
+            className="rounded p-1 text-text-muted hover:bg-surface-hover cursor-pointer"
           >
             <X size={14} />
           </button>
@@ -288,8 +288,8 @@ export default function FolderTree({
         className={[
           "flex w-full items-center gap-2 rounded-md px-3 py-1.5 text-sm transition-colors cursor-pointer",
           activeFolderId === null
-            ? "bg-indigo-50 text-indigo-700 font-medium"
-            : "text-gray-700 hover:bg-gray-100",
+            ? "bg-accent-light text-accent font-medium"
+            : "text-text-secondary hover:bg-surface-hover",
         ].join(" ")}
       >
         <FolderIcon size={16} className="shrink-0" />
@@ -315,7 +315,7 @@ export default function FolderTree({
       {/* New root folder */}
       {showNewRoot ? (
         <div className="flex items-center gap-1.5 px-3 py-1">
-          <FolderIcon size={14} className="shrink-0 text-gray-300" />
+          <FolderIcon size={14} className="shrink-0 text-text-placeholder" />
           <input
             autoFocus
             value={newRootName}
@@ -334,11 +334,11 @@ export default function FolderTree({
                 setNewRootName("");
               }
             }}
-            className="flex-1 rounded border border-gray-300 px-1.5 py-0.5 text-sm focus:outline-none focus:ring-1 focus:ring-indigo-400"
+            className="flex-1 rounded border border-border-strong bg-surface px-1.5 py-0.5 text-sm text-text-primary focus:outline-none focus:ring-1 focus:ring-ring"
           />
           <button
             onClick={handleCreateRoot}
-            className="rounded p-1 text-green-600 hover:bg-green-50 cursor-pointer"
+            className="rounded p-1 text-green-600 hover:bg-green-50 dark:hover:bg-green-900/20 cursor-pointer"
           >
             <Check size={14} />
           </button>
@@ -347,7 +347,7 @@ export default function FolderTree({
               setShowNewRoot(false);
               setNewRootName("");
             }}
-            className="rounded p-1 text-gray-400 hover:bg-gray-100 cursor-pointer"
+            className="rounded p-1 text-text-muted hover:bg-surface-hover cursor-pointer"
           >
             <X size={14} />
           </button>
@@ -355,7 +355,7 @@ export default function FolderTree({
       ) : (
         <button
           onClick={() => setShowNewRoot(true)}
-          className="flex w-full items-center gap-2 rounded-md px-3 py-1.5 text-sm text-gray-400 hover:bg-gray-100 hover:text-gray-600 transition-colors cursor-pointer"
+          className="flex w-full items-center gap-2 rounded-md px-3 py-1.5 text-sm text-text-muted hover:bg-surface-hover hover:text-text-secondary transition-colors cursor-pointer"
         >
           <Plus size={14} />
           New folder

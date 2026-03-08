@@ -42,30 +42,30 @@ function VerifyEmailContent() {
   };
 
   return (
-    <div className="rounded-xl border border-gray-200 bg-white p-6 shadow-sm text-center">
-      <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-indigo-50">
-        <Mail className="h-7 w-7 text-indigo-600" />
+    <div className="rounded-xl border border-border bg-surface p-6 shadow-sm text-center">
+      <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-accent-light">
+        <Mail className="h-7 w-7 text-accent" />
       </div>
 
-      <h2 className="text-lg font-semibold text-gray-900 mb-2">
+      <h2 className="text-lg font-semibold text-text-primary mb-2">
         Check your email
       </h2>
 
-      <p className="text-sm text-gray-500 mb-1">
+      <p className="text-sm text-text-tertiary mb-1">
         We&apos;ve sent a verification link to
       </p>
 
       {email && (
-        <p className="text-sm font-medium text-gray-900 mb-6">
+        <p className="text-sm font-medium text-text-primary mb-6">
           {email}
         </p>
       )}
 
       {!email && (
-        <p className="text-sm text-gray-500 mb-6">your email address</p>
+        <p className="text-sm text-text-tertiary mb-6">your email address</p>
       )}
 
-      <p className="text-sm text-gray-500 mb-6">
+      <p className="text-sm text-text-tertiary mb-6">
         Click the link in the email to verify your account. The link will
         expire in 24 hours.
       </p>
@@ -98,22 +98,22 @@ function VerifyEmailContent() {
 
 export default function VerifyEmailPage() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-gray-50 px-4">
+    <div className="flex min-h-screen items-center justify-center bg-background px-4">
       <div className="w-full max-w-sm">
         {/* Logo */}
         <div className="mb-8 text-center">
-          <h1 className="text-3xl font-bold text-indigo-600">NoteFlow</h1>
+          <h1 className="text-3xl font-bold text-accent">NoteFlow</h1>
         </div>
 
         <Suspense>
           <VerifyEmailContent />
         </Suspense>
 
-        <p className="mt-6 text-center text-sm text-gray-500">
+        <p className="mt-6 text-center text-sm text-text-tertiary">
           Already verified?{" "}
           <Link
             href="/login"
-            className="font-medium text-indigo-600 hover:text-indigo-500"
+            className="font-medium text-accent hover:opacity-80"
           >
             Sign in
           </Link>

@@ -58,6 +58,7 @@ export interface Task {
 
 export type SortBy = "updatedAt" | "createdAt" | "title";
 export type SortOrder = "asc" | "desc";
+export type Theme = "light" | "dark" | "aubergine" | "ocean";
 
 // ---------------------------------------------------------------------------
 // Store interface
@@ -110,6 +111,10 @@ export interface NoteFlowState {
   // UI
   sidebarOpen: boolean;
   setSidebarOpen: (open: boolean) => void;
+
+  // Theme
+  theme: Theme;
+  setTheme: (theme: Theme) => void;
 }
 
 // ---------------------------------------------------------------------------
@@ -201,4 +206,8 @@ export const useStore = create<NoteFlowState>((set) => ({
   // UI --------------------------------------------------------------------
   sidebarOpen: true,
   setSidebarOpen: (open) => set({ sidebarOpen: open }),
+
+  // Theme -----------------------------------------------------------------
+  theme: "light",
+  setTheme: (theme) => set({ theme }),
 }));

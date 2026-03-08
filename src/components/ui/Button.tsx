@@ -14,13 +14,13 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 
 const variantStyles: Record<ButtonVariant, string> = {
   primary:
-    "bg-indigo-600 text-white hover:bg-indigo-700 active:bg-indigo-800 shadow-sm",
+    "bg-accent text-white hover:bg-accent-hover active:bg-accent-hover shadow-sm",
   secondary:
-    "bg-white text-gray-700 border border-gray-300 hover:bg-gray-50 active:bg-gray-100 shadow-sm",
+    "bg-surface text-text-secondary border border-border-strong hover:bg-surface-hover active:bg-surface-hover shadow-sm",
   ghost:
-    "bg-transparent text-gray-600 hover:bg-gray-100 active:bg-gray-200",
+    "bg-transparent text-text-tertiary hover:bg-surface-hover active:bg-surface-hover",
   danger:
-    "bg-red-600 text-white hover:bg-red-700 active:bg-red-800 shadow-sm",
+    "bg-danger text-white hover:bg-danger-hover active:bg-danger-hover shadow-sm",
 };
 
 const sizeStyles: Record<ButtonSize, string> = {
@@ -49,7 +49,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
         ref={ref}
         disabled={isDisabled}
         className={[
-          "inline-flex items-center justify-center font-medium transition-colors duration-150 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500 select-none",
+          "inline-flex items-center justify-center font-medium transition-colors duration-150 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent select-none",
           variantStyles[variant],
           sizeStyles[size],
           isDisabled
